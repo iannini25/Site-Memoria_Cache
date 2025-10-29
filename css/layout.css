@@ -1,0 +1,916 @@
+/* =============================
+   LAYOUT.GERAL
+   ============================= */
+
+/* Header (apenas marca) */
+.site-header.brand-only {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  z-index: 30;
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+  padding: 12px 24px;
+  border-bottom: 1px solid var(--line);
+  background: rgba(10, 10, 10, .55);
+  backdrop-filter: blur(8px) saturate(120%);
+}
+
+.site-header.brand-only .brand img {
+  height: 36px;
+}
+
+/* =============================
+   HERO
+   ============================= */
+
+.hero {
+  position: relative;
+  min-height: 88vh;
+  display: grid;
+  place-items: end;
+  border-bottom: 1px solid var(--line);
+  overflow: hidden;
+}
+
+.hero-bg {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  opacity: .35;
+  transform: scale(1.08);
+  z-index: 0;
+  /* fundo */
+}
+
+.hero-inner {
+  position: relative;
+  z-index: 2;
+  /* conteúdo acima do overlay */
+  width: 100%;
+  max-width: var(--max);
+  margin-inline: auto;
+  padding: calc(20vh + 40px) 24px 10vh;
+}
+
+.hero-sub {
+  max-width: 720px;
+  color: var(--muted);
+  margin: 12px 0 24px;
+}
+
+.hero-ctas {
+  display: flex;
+  gap: 12px;
+  flex-wrap: wrap;
+}
+
+/* MARQUEE */
+.marquee {
+  position: relative;
+  overflow: hidden;
+  border-top: 1px solid var(--line);
+  border-bottom: 1px solid var(--line);
+  margin-top: 56px;
+  height: 38px;
+  display: flex;
+  align-items: center;
+  color: #9a9a9a;
+  white-space: nowrap;
+  z-index: 2;
+}
+
+.marquee__track {
+  display: flex;
+  gap: 24px;
+  will-change: transform;
+  animation: mc-marquee 18s linear infinite;
+}
+
+.marquee span {
+  padding-right: 24px;
+  white-space: nowrap;
+}
+
+.marquee:hover .marquee__track {
+  animation-play-state: paused;
+}
+
+@keyframes mc-marquee {
+  from {
+    transform: translateX(0)
+  }
+
+  to {
+    transform: translateX(-50%)
+  }
+}
+
+/* =============================
+   GRIDS & MEDIA
+   ============================= */
+
+.grid-2 {
+  display: grid;
+  grid-template-columns: 1.2fr .8fr;
+  gap: 32px;
+}
+
+.grid-3 {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 24px;
+}
+
+.media img {
+  border-radius: 16px;
+  border: 1px solid var(--line);
+}
+
+@media (max-width:920px) {
+  .grid-2 {
+    grid-template-columns: 1fr;
+  }
+
+  .grid-3 {
+    grid-template-columns: 1fr;
+  }
+}
+
+/* =============================
+   CARDS
+   ============================= */
+
+.cards {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 18px;
+}
+
+.card {
+  border: 1px solid var(--line);
+  border-radius: 16px;
+  overflow: hidden;
+  background: #0c0c0c;
+  transition: transform .25s var(--ease);
+}
+
+.card:hover {
+  transform: translateY(-4px)
+}
+
+.card .thumb {
+  aspect-ratio: 16/9;
+  overflow: hidden;
+}
+
+.card .thumb img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.card-body {
+  padding: 16px;
+}
+
+.card .meta {
+  font-size: .85rem;
+  color: var(--muted);
+  display: block;
+  margin-bottom: 6px;
+}
+
+@media (max-width:920px) {
+  .cards {
+    grid-template-columns: 1fr
+  }
+}
+
+/* =============================
+   QUOTE
+   ============================= */
+
+.quote {
+  position: relative;
+  text-align: center;
+}
+
+.bg-grain {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  opacity: .08;
+}
+
+/* =============================
+   APPS
+   ============================= */
+
+.apps-grid {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(180px, 1fr));
+  gap: 16px;
+  margin-top: 18px;
+}
+
+.app {
+  border: 1px solid var(--line);
+  border-radius: 12px;
+  padding: 18px;
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  background: #0d0d0d;
+}
+
+.app img {
+  width: 22px;
+}
+
+@media (max-width:700px) {
+  .apps-grid {
+    grid-template-columns: 1fr
+  }
+}
+
+/* linhas separadas */
+.apps-grid.apps-main {
+  grid-template-columns: repeat(2, minmax(240px, 1fr));
+  margin-top: 18px;
+}
+
+.apps-grid.apps-cortes {
+  grid-template-columns: repeat(2, minmax(240px, 1fr));
+  margin-top: 10px;
+}
+
+/* divisor "Cortes" */
+.apps-split {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  margin: 22px 0 8px;
+}
+
+.apps-split::before,
+.apps-split::after {
+  content: "";
+  flex: 1 1 auto;
+  border-top: 1px solid var(--line);
+  opacity: .9;
+}
+
+.apps-label {
+  color: var(--muted);
+  font-weight: 600;
+  font-size: .95rem;
+}
+
+@media (max-width:700px) {
+
+  .apps-grid.apps-main,
+  .apps-grid.apps-cortes {
+    grid-template-columns: 1fr
+  }
+}
+
+/* =============================
+   HOSTS
+   ============================= */
+
+.host {
+  text-align: center
+}
+
+.host img {
+  width: 140px;
+  height: 140px;
+  object-fit: cover;
+  border-radius: 50%;
+  border: 1px solid var(--line);
+  margin: 0 auto 12px;
+}
+
+.host p {
+  color: var(--muted)
+}
+
+.host--solo {
+  max-width: 760px;
+  margin: 0 auto;
+  text-align: center
+}
+
+.host--solo img {
+  width: 180px;
+  height: 180px;
+  margin: 0 auto 12px
+}
+
+/* =============================
+   CTA
+   ============================= */
+
+.cta {
+  text-align: center
+}
+
+.cta .cta-actions {
+  display: flex;
+  gap: 12px;
+  justify-content: center;
+  margin-top: 8px
+}
+
+/* =============================
+   FOOTER
+   ============================= */
+
+.site-footer {
+  border-top: 1px solid var(--line);
+  padding: 36px 0;
+  background: #0b0b0b;
+}
+
+.site-footer .container {
+  display: flex;
+  align-items: center;
+  gap: 24px;
+  flex-wrap: wrap
+}
+
+.site-footer .brand img {
+  height: 24px
+}
+
+.footer-links {
+  list-style: none;
+  padding: 0;
+  display: flex;
+  gap: 16px;
+  margin: 12px 0
+}
+
+.social {
+  display: flex;
+  gap: 10px;
+  margin-left: auto
+}
+
+.social img {
+  width: 18px
+}
+
+/* =============================
+   SCROLL PROGRESS BAR
+   ============================= */
+
+.scrollbar {
+  position: fixed;
+  inset: 0 auto auto 0;
+  height: 2px;
+  width: 0%;
+  background: var(--fg);
+  z-index: 50;
+}
+
+/* =============================
+   SIDE NAV
+   ============================= */
+
+.side-nav {
+  position: fixed;
+  right: 20px;
+  top: 50%;
+  transform: translateY(-50%);
+  z-index: 40;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  padding: 12px;
+  border-radius: 24px;
+  background: rgba(15, 15, 15, .55);
+  border: 1px solid var(--line);
+  backdrop-filter: blur(10px) saturate(120%);
+}
+
+.side-link {
+  width: 44px;
+  height: 44px;
+  display: grid;
+  place-items: center;
+  border-radius: 50%;
+  border: 1px solid transparent;
+  transition: transform .18s var(--ease), background-color .18s var(--ease), border-color .18s var(--ease);
+  background: rgba(255, 255, 255, .02);
+  position: relative;
+}
+
+.side-link img {
+  width: 20px;
+  height: 20px;
+  filter: grayscale(100%)
+}
+
+.side-link:hover {
+  transform: translateY(-2px);
+  background: rgba(255, 255, 255, .06);
+  border-color: var(--line)
+}
+
+.side-link.is-active {
+  background: rgba(255, 255, 255, .12);
+  border-color: var(--fg)
+}
+
+.side-link::after {
+  content: attr(data-tip);
+  position: absolute;
+  right: 56px;
+  top: 50%;
+  transform: translateY(-50%) translateX(8px);
+  white-space: nowrap;
+  background: rgba(15, 15, 15, .85);
+  color: var(--fg);
+  border: 1px solid var(--line);
+  padding: 6px 10px;
+  border-radius: 8px;
+  font-size: .85rem;
+  line-height: 1;
+  opacity: 0;
+  pointer-events: none;
+  transition: opacity .15s var(--ease), transform .15s var(--ease);
+}
+
+.side-link:hover::after {
+  opacity: 1;
+  transform: translateY(-50%) translateX(0)
+}
+
+@media (max-width:920px) {
+  .side-nav {
+    display: none
+  }
+}
+
+/* ============================
+   RESPONSIVO (LAYOUT)
+   ============================ */
+
+/* <=1024px */
+@media (max-width:1024px) {
+  .hero-inner {
+    padding: calc(16vh + 40px) 24px 10vh;
+  }
+
+  .grid-2 {
+    grid-template-columns: 1fr;
+    gap: 24px
+  }
+
+  .cards {
+    grid-template-columns: repeat(2, 1fr)
+  }
+}
+
+/* <=768px */
+@media (max-width:768px) {
+  .hero {
+    min-height: 82vh
+  }
+
+  .hero-inner {
+    padding: calc(14vh + 40px) 20px 9vh;
+  }
+
+  .hero-sub {
+    max-width: 640px
+  }
+
+  .cards {
+    grid-template-columns: 1fr;
+    gap: 16px
+  }
+
+  .apps-grid {
+    grid-template-columns: 1fr
+  }
+
+  .apps-grid.apps-main,
+  .apps-grid.apps-cortes {
+    grid-template-columns: 1fr
+  }
+
+  .app {
+    padding: 16px;
+    border-radius: 10px
+  }
+
+  .app img {
+    width: 20px
+  }
+
+  .quote {
+    text-align: left
+  }
+
+  .site-footer .container {
+    gap: 16px;
+    justify-content: flex-start
+  }
+
+  .footer-links {
+    gap: 12px;
+    margin: 4px 0 0
+  }
+
+  .social {
+    margin-left: 0
+  }
+}
+
+/* ===== MOBILE BASE — <=428px ===== */
+@media (max-width:428px) {
+
+  /* desliga animações no mobile */
+  .reveal-up,
+  .reveal-fade {
+    transform: none !important;
+    opacity: 1 !important;
+    transition: none !important;
+  }
+
+  /* HERO centralizado e alto (estilo "Flow") */
+  .hero {
+    min-height: 92vh;
+    display: grid;
+    place-items: center;
+  }
+
+  .hero::after {
+    content: "";
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(180deg, rgba(10, 10, 10, .55) 0%, rgba(10, 10, 10, .40) 35%, rgba(10, 10, 10, .55) 100%);
+    pointer-events: none;
+    z-index: 1;
+  }
+
+  .hero-bg {
+    object-fit: cover;
+    width: 100%;
+    height: 100%;
+    transform: none !important;
+    opacity: .35;
+    z-index: 0;
+  }
+
+  .hero-inner {
+    position: relative;
+    z-index: 2;
+    width: 100%;
+    padding: calc(env(safe-area-inset-top) + 64px) 18px 18vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    /* título no meio */
+    gap: 14px;
+  }
+
+  /* TÍTULO: central, com boas quebras */
+  .hero-inner>h1 {
+    margin: 0;
+    font-size: clamp(2.0rem, 7.8vw, 2.6rem);
+    /* maior no mobile */
+    line-height: 1.1;
+    letter-spacing: -0.01em;
+    max-width: 16ch;
+    /* força 2–3 linhas elegantes */
+    word-break: normal;
+    overflow-wrap: anywhere;
+  }
+
+  .hero-inner>h1 .stroke {
+    -webkit-text-stroke: 0;
+    /* sem contorno no mobile */
+    color: var(--fg);
+  }
+
+  /* Subtítulo (opcional). Mantém pequeno e central */
+  .hero-sub {
+    max-width: 36ch;
+    margin: 4px 0 6px;
+    font-size: .95rem;
+    color: #e6e6e6;
+  }
+
+  /* BOTÕES pequenos, lado-a-lado e centralizados */
+  .hero-ctas {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 10px;
+    flex-wrap: nowrap;
+  }
+
+  .hero-ctas .btn,
+  .hero-ctas .btn-ghost {
+    width: auto;
+    /* sobrescreve o width:100% do global.css */
+    padding: 10px 14px;
+    /* botão compacto */
+    font-size: .94rem;
+    line-height: 1;
+  }
+
+  /* Marquee fora do mobile */
+  .marquee {
+    display: none;
+  }
+
+  /* Header compacto */
+  .site-header.brand-only {
+    padding: calc(8px + env(safe-area-inset-top)) 14px 8px;
+    backdrop-filter: blur(10px) saturate(120%);
+  }
+
+  .site-header.brand-only .brand img {
+    height: 28px;
+  }
+
+  /* ajustes diversos do restante da página (inalterados) */
+  .apps-grid.apps-main,
+  .apps-grid.apps-cortes {
+    gap: 12px;
+  }
+
+  .app {
+    padding: 14px;
+    gap: 10px;
+  }
+
+  .card {
+    border-radius: 12px;
+  }
+
+  .card .thumb {
+    aspect-ratio: 16/10;
+  }
+
+  .site-footer {
+    padding: 28px 0;
+  }
+
+  .site-footer .brand img {
+    height: 22px;
+  }
+
+  .social img {
+    width: 20px;
+  }
+
+  /* H1 — fonte/estética específica no mobile */
+  @media (max-width: 428px) {
+    .hero-inner>h1 {
+      /* tamanho já ajustado antes — pode manter seus valores atuais */
+      font-size: clamp(2.0rem, 7.8vw, 2.6rem);
+      line-height: 1.1;
+      text-align: center;
+
+      /* 👇 nova fonte e estilo apenas no mobile */
+      font-family: var(--font-mobile-title, system-ui, -apple-system, Segoe UI, Roboto, Arial, sans-serif);
+      font-weight: 800;
+      text-transform: uppercase;
+      letter-spacing: 0.02em;
+    }
+
+    /* remove contorno no mobile para ficar mais legível */
+    .hero-inner>h1 .stroke {
+      -webkit-text-stroke: 0;
+      color: var(--fg);
+    }
+  }
+
+  /* ajuste fino iPhone 13, se quiser um tiquinho menor */
+  @media (max-width: 390px) {
+    .hero-inner>h1 {
+      font-size: clamp(1.9rem, 7.4vw, 2.35rem);
+    }
+  }
+}
+
+/* 🎯 iPhone 13 — <=390px (ajuste fino) */
+@media (max-width:390px) {
+  .hero-inner {
+    padding: calc(env(safe-area-inset-top) + 56px) 16px 16vh;
+    gap: 12px;
+  }
+
+  .hero-inner>h1 {
+    font-size: clamp(1.9rem, 7.4vw, 2.35rem);
+    max-width: 17ch;
+  }
+
+  .hero-ctas .btn,
+  .hero-ctas .btn-ghost {
+    padding: 9px 12px;
+    font-size: .92rem;
+  }
+}
+
+/* 360px — extra compacto */
+@media (max-width:360px) {
+  .hero-inner {
+    padding: calc(env(safe-area-inset-top) + 52px) 14px 15vh;
+  }
+
+  .hero-inner>h1 {
+    font-size: clamp(1.8rem, 7.2vw, 2.2rem);
+    max-width: 18ch;
+  }
+
+  .hero-ctas .btn,
+  .hero-ctas .btn-ghost {
+    padding: 8px 10px;
+    font-size: .9rem;
+  }
+}
+
+/* H1 — fonte/estética específica no mobile */
+@media (max-width: 428px) {
+  .hero-inner>h1 {
+    /* tamanho já ajustado antes — pode manter seus valores atuais */
+    font-size: clamp(2.0rem, 7.8vw, 2.6rem);
+    line-height: 1.1;
+    text-align: center;
+
+    /* 👇 nova fonte e estilo apenas no mobile */
+    font-family: var(--font-mobile-title, system-ui, -apple-system, Segoe UI, Roboto, Arial, sans-serif);
+    font-weight: 800;
+    text-transform: uppercase;
+    letter-spacing: 0.02em;
+  }
+
+  /* remove contorno no mobile para ficar mais legível */
+  .hero-inner>h1 .stroke {
+    -webkit-text-stroke: 0;
+    color: var(--fg);
+  }
+}
+
+/* ajuste fino iPhone 13, se quiser um tiquinho menor */
+@media (max-width: 390px) {
+  .hero-inner>h1 {
+    font-size: clamp(1.9rem, 7.4vw, 2.35rem);
+  }
+}
+
+/* ===== Enxugar altura do HERO no mobile ===== */
+@media (max-width: 428px) {
+
+  /* altura total menor */
+  .hero {
+    min-height: 85vh;
+    /* antes ~92vh */
+  }
+
+  /* menos “respiro” em cima/baixo */
+  .hero-inner {
+    /* top menor + bottom bem menor */
+    padding: calc(env(safe-area-inset-top) + 44px) 16px 10vh;
+    /* antes ~18–22vh */
+  }
+
+  /* opcional: reposiciona o foco da imagem de fundo */
+  .hero-bg {
+    object-position: center 30%;
+    /* ajuste fino do enquadramento */
+  }
+}
+
+/* iPhone 13 */
+@media (max-width: 390px) {
+  .hero {
+    min-height: 72vh;
+  }
+
+  .hero-inner {
+    padding: calc(env(safe-area-inset-top) + 40px) 14px 9vh;
+  }
+}
+
+/* 360px e menores */
+@media (max-width: 360px) {
+  .hero {
+    min-height: 70vh;
+  }
+
+  .hero-inner {
+    padding: calc(env(safe-area-inset-top) + 38px) 14px 8vh;
+  }
+}
+
+/* ===== Destaques recentes — mobile: 1 coluna, apenas 2 cards ===== */
+@media (max-width: 428px) {
+
+  /* garante 1 coluna */
+  #destaques .cards {
+    grid-template-columns: 1fr !important;
+    gap: 14px;
+  }
+
+  /* exibe apenas os 2 primeiros */
+  #destaques .card:nth-child(n+3) {
+    display: none !important;
+  }
+
+  /* thumb mais retinha para mobile (opcional) */
+  #destaques .card .thumb {
+    aspect-ratio: 16 / 9;
+  }
+}
+
+/* ajuste fino iPhone 13 e menores */
+@media (max-width: 390px) {
+  #destaques .cards {
+    gap: 12px;
+  }
+}
+
+
+/* título padrão (sem ícone flutuante) mantém comportamento anterior */
+.host-title{
+  display: inline-flex;
+  align-items: center;
+  gap: 20px;
+  margin: 6px 0 8px;
+  vertical-align: middle;
+  white-space: nowrap;
+}
+
+/* bloco com ícone isolado à direita (não interfere no centro) */
+.host-title--with-icon{
+  position: relative !important;   /* pista p/ posicionar o ícone */
+  display: block !important;       /* ocupa a linha toda, separa do fluxo do ícone */
+  margin: 6px 0 8px;
+  padding-right: 0px;             /* reserva espaço p/ o ícone */
+}
+
+/* no card solo, o contêiner continua central no bloco */
+.host--solo .host-title,
+.host--solo .host-title--with-icon{
+  justify-content: center;
+}
+
+/* h3 sempre centralizado; ícone não afeta o centro */
+.host-name{
+  margin: 0;
+  line-height: 1.1;
+  text-align: center;
+}
+
+/* link do LinkedIn "cru" — ícone flutuante na direita */
+.host-linkedin,
+.host-linkedin--plain{
+  position: absolute !important;
+  top: 50%;
+  right: 0;
+  transform: translateY(-50%);
+  display: inline-block;
+  margin: 0;
+  padding: 90px;
+  background: transparent !important;
+  border: none !important;
+  border-radius: 0 !important;
+  box-shadow: none !important;
+}
+
+/* ícone sem herdar bordas/raios (escopa forte para vencer .host img genérico) */
+.host-title--with-icon .host-linkedin img,
+.host-title--with-icon .host-linkedin--plain img{
+  display: block;
+  width: 25px;
+  height: 25px;
+  border: 0 !important;
+  border-radius: 0 !important;
+  box-shadow: none !important;
+  filter: none !important;
+}
+
+/* mobile: um tico menor e reserva de espaço proporcional */
+@media (max-width: 428px){
+  .host-title--with-icon{ padding-right: 30px; }
+  .host-title--with-icon .host-linkedin img,
+  .host-title--with-icon .host-linkedin--plain img{
+    width: 22px;
+    height: 22px;
+  }
+}

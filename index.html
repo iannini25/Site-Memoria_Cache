@@ -1,0 +1,288 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Memória Cache — Podcast</title>
+  <meta name="description"
+    content="Podcast sobre tecnologia, pagamentos e negócios, em conversas diretas com quem constrói o mercado." />
+
+  <!-- CSS -->
+  <link rel="preload" href="css/global.css" as="style" />
+  <link rel="stylesheet" href="css/global.css" />
+  <link rel="stylesheet" href="css/layout.css" />
+  <link rel="stylesheet" href="css/animations.css" />
+  <link rel="stylesheet" href="css/home.css" />
+
+  <link rel="icon" href="assets/img/LOGO memoria cache.png" type="image/svg+xml" />
+</head>
+
+<body>
+
+  <!-- Barra de progresso do scroll -->
+  <div class="scrollbar" aria-hidden="true"></div>
+
+  <!-- Header -->
+  <header class="site-header brand-only">
+    <a class="brand" href="index.html" aria-label="Memória Cache - Página inicial">
+      <img src="assets/img/LOGO memoria cache (com fundo transparente).png" alt="Memória Cache" />
+    </a>
+  </header>
+
+  <!-- MENU LATERAL FIXO (vertical, translúcido, com ícones) -->
+  <aside class="side-nav" aria-label="Navegação lateral">
+    <a class="side-link" href="#sobre" data-tip="Sobre">
+      <img src="assets/icons/info-borderless-svgrepo-com.svg" alt="Sobre" />
+    </a>
+    <a class="side-link" href="#destaques" data-tip="Destaques">
+      <img src="assets/icons/star-svgrepo-com.svg" alt="Destaques" />
+    </a>
+    <a class="side-link" href="#onde-ouvir" data-tip="Onde ouvir">
+      <img src="assets/icons/headphones-alt-1-svgrepo-com.svg" alt="Onde ouvir" />
+    </a>
+    <a class="side-link" href="episodios.html" data-tip="Episódios">
+      <img src="assets/icons/list-svgrepo-com (1).svg" alt="Episódios" />
+    </a>
+    <a class="side-link" href="cortes.html" data-tip="Cortes">
+      <img src="assets/icons/scissors-svgrepo-com.svg" alt="Cortes" />
+    </a>
+  </aside>
+
+  <!-- HERO -->
+  <section class="hero" id="topo">
+    <picture>
+      <img class="hero-bg" src="assets/img/fundo_landingpage.png" alt="" loading="eager" decoding="async"
+        data-parallax="0.25" />
+    </picture>
+
+    <div class="hero-inner">
+      <h1 id="heroTitle" class="reveal-up" data-mobile-title="CONTEÚDO INTELIGENTE SOBRE TECNOLOGIA">
+        Pílulas de <br><span class="stroke">conteúdo inteligente</span><br />
+        sobre tecnologia
+      </h1>
+
+
+      <!-- Texto completo (desktop/tablet) -->
+      <p class="hero-sub reveal-up delay-1 only-desktop">
+        <strong>Memória Cache</strong> faz alusão à cache do processador: acesso rápido ao que importa.
+        Entrevistas conduzidas por <strong>Túlio Iannini</strong>, fundador e CEO da <strong>U4C</strong>
+        (autorizada pelo <strong>Banco Central)</strong>. Túlio também é colunista do
+        <strong>Investing.com</strong>.
+      </p>
+
+      <!-- Texto resumido (mobile) -->
+      <p class="hero-sub reveal-up delay-1 only-mobile">
+        <strong>Memória Cache</strong> faz alusão à cache do processador: acesso rápido ao que importa. <br>
+
+      </p>
+
+      <div class="hero-ctas reveal-up delay-2">
+        <a class="btn" href="episodios.html">Ouvir episódios</a>
+        <a class="btn-ghost" href="#onde-ouvir">Assinar no seu app</a>
+      </div>
+
+      <!-- marquee estável -->
+      <div class="marquee" aria-hidden="true">
+        <div class="marquee__track">
+          <span>Open Finance · Iniciação de Pagamentos · Pix · IA · Tendências · Produto · Governança · </span>
+          <span aria-hidden="true">Open Finance · Iniciação de Pagamentos · Pix · IA · Tendências · Produto · Governança
+            · </span>
+        </div>
+      </div>
+
+    </div>
+
+
+  </section>
+
+  <!-- SOBRE -->
+  <section id="sobre" class="sobre section">
+    <div class="container">
+      <div class="grid-2">
+        <div class="col reveal-up">
+          <h2>Por que ouvir?</h2>
+          <p>
+            Conteúdo direto ao ponto para quem constrói produtos digitais e negócios
+            no ecossistema de meios de pagamento. Sem firula: contexto, processo e
+            aprendizados práticos.
+          </p>
+          <ul class="bullets">
+            <li>Entrevistas com executivos, founders e especialistas.</li>
+            <li>Temas quentes do mercado com profundidade.</li>
+            <li>Regulatório na prática: o que muda e como se adaptar.</li>
+          </ul>
+        </div>
+        <div class="col media reveal-up delay-1">
+          <img src="assets/img/estudio.png" alt="Estúdio do podcast" />
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- DESTAQUES (cards com efeito) -->
+  <section id="destaques" class="destaques section alt">
+    <div class="container">
+      <div class="section-head">
+        <h2 class="reveal-up">Destaques recentes</h2>
+        <a class="link-more reveal-up delay-1" href="episodios.html">Ver todos os episódios →</a>
+      </div>
+
+      <div class="cards">
+        <!-- Card 1 -->
+        <article class="card reveal-fade" data-observe>
+          <a href="episodios.html">
+            <figure class="thumb">
+              <img src="assets/img/thumb bernardo.png" alt="Capa do episódio" loading="lazy" />
+            </figure>
+            <div class="card-body">
+              <span class="meta">#13 • 1h18min</span>
+              <h3>Governança Corporativa e Conselho em fintechs.</h3>
+              <p>Como criar um sistema robusto de governança?</p>
+            </div>
+          </a>
+        </article>
+
+        <!-- Card 2 -->
+        <article class="card reveal-fade delay-1" data-observe>
+          <a href="episodios.html">
+            <figure class="thumb">
+              <img src="assets/img/thum monica.png" alt="Capa do episódio" loading="lazy" />
+            </figure>
+            <div class="card-body">
+              <span class="meta">#11 • 56min</span>
+              <h3>Desafios da gestão de pessoas em empresas de inovação</h3>
+              <p>Aborda a adaptação das diferentes gerações no ambiente de trabalho e como a inteligência artificial
+                está transformando a gestão de pessoas.</p>
+            </div>
+          </a>
+        </article>
+
+        <!-- Card 3 -->
+        <article class="card reveal-fade delay-2" data-observe>
+          <a href="episodios.html">
+            <figure class="thumb">
+              <img src="assets/img/Thumb leo lima.png" alt="Capa do episódio" loading="lazy" />
+            </figure>
+            <div class="card-body">
+              <span class="meta">#10 • 50min</span>
+              <h3>Produto em meios de pagamento</h3>
+              <p>Como a ponta do meio de pagamentos pode ser integrada a sistemas de logística?</p>
+            </div>
+          </a>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <!-- ONDE OUVIR -->
+  <section id="onde-ouvir" class="apps section">
+    <div class="container">
+      <h2 class="reveal-up">Ouça no seu player favorito</h2>
+      <p class="reveal-up delay-1">Assine para receber novos episódios assim que saírem.</p>
+
+      <!-- Linha 1: players -->
+      <div class="apps-grid apps-main">
+        <a class="app reveal-fade" href="#" aria-label="YouTube">
+          <img src="assets/icons/youtube-color-svgrepo-com.svg" alt="" />
+          <span>YouTube</span>
+        </a>
+        <a class="app reveal-fade delay-1" href="#" aria-label="Spotify">
+          <img src="assets/icons/spotify-color-svgrepo-com.svg" alt="" />
+          <span>Spotify</span>
+        </a>
+      </div>
+
+      <!-- Divisor + label -->
+      <div class="apps-split">
+        <span class="apps-label">Cortes (plataformas oficiais)</span>
+      </div>
+
+      <!-- Linha 2: cortes -->
+      <div class="apps-grid apps-cortes">
+        <a class="app reveal-fade" href="#" aria-label="TikTok">
+          <img src="assets/icons/tiktok-logo-logo-svgrepo-com.svg" alt="" />
+          <span>TikTok</span>
+        </a>
+        <a class="app reveal-fade delay-1" href="#" aria-label="Instagram">
+          <img src="assets/icons/instagram-1-svgrepo-com.svg" alt="" />
+          <span>Instagram</span>
+        </a>
+      </div>
+    </div>
+  </section>
+
+
+  <!-- HOST / APRESENTADOR -->
+  <section id="apresentador" class="hosts section alt">
+    <div class="container">
+      <article class="host host--solo reveal-up">
+        <!-- ⬅️ Foto do host agora tem classe própria -->
+        <img class="host-avatar" src="assets/img/fototulio.jpeg" alt="Foto de Túlio Iannini" />
+
+        <!-- título + linkedin (ícone simples, à direita) -->
+        <div class="host-title host-title--with-icon">
+          <h3 class="host-name">Túlio Iannini</h3>
+          <a class="host-linkedin host-linkedin--plain" href="https://www.linkedin.com/in/tulioiannini" target="_blank"
+            rel="noopener" aria-label="LinkedIn de Túlio Iannini">
+            <img src="assets/icons/linkedin-svgrepo-com.svg" alt="LinkedIn" />
+          </a>
+        </div>
+
+        <p>
+          Apresentador do Memória Cache. Executivo e empreendedor no setor de tecnologia e meios de pagamento, conecta
+          estratégia, inovação e execução em conversas diretas com quem faz o mercado acontecer.
+        </p>
+      </article>
+    </div>
+  </section>
+
+
+
+
+
+  <!-- CTA FINAL -->
+  <section class="cta section">
+    <div class="container narrow">
+      <h2 class="reveal-up">Pronto para destravar seu próximo passo?</h2>
+      <p class="reveal-up delay-1">Escolha um episódio e vem com a gente.</p>
+      <div class="cta-actions reveal-up delay-2">
+        <a class="btn" href="episodios.html">Explorar episódios</a>
+        <a class="btn-ghost" href="sobre.html">Saiba mais</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer class="site-footer">
+    <div class="container">
+      <a class="brand" href="index.html" aria-label="Memória Cache - Página inicial">
+        <img src="assets/img/LOGO memoria cache (com fundo transparente).png" alt="Memória Cache" />
+      </a>
+
+      <ul class="footer-links">
+        <li><a href="sobre.html">Sobre</a></li>
+        <li><a href="episodios.html">Episódios</a></li>
+        <li><a href="cortes.html">Cortes</a></li>
+      </ul>
+
+      <div class="social">
+        <a aria-label="YouTube" href="#"><img src="assets/icons/youtube-color-svgrepo-com.svg" alt=""></a>
+        <a aria-label="Spotify" href="#"><img src="assets/icons/spotify-color-svgrepo-com.svg" alt=""></a>
+        <a aria-label="Instagram" href="#"><img src="assets/icons/instagram-1-svgrepo-com.svg" alt=""></a>
+        <a aria-label="TikTok" href="#"><img src="assets/icons/tiktok-logo-logo-svgrepo-com.svg" alt=""></a>
+        <a aria-label="Linkedin" href="#"><img src="assets/icons/linkedin-svgrepo-com.svg" alt=""></a>
+      </div>
+
+
+
+      <small>© <span id="year"></span> Memória Cache. Todos os direitos reservados.</small>
+    </div>
+  </footer>
+
+  <!-- JS -->
+  <script src="js/ui.js" defer></script>
+  <script src="js/main.js" defer></script>
+</body>
+
+</html>

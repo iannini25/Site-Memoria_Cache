@@ -1,0 +1,102 @@
+body {
+  margin: 0;
+  font-family: "Poppins", sans-serif;
+  background-color: #000;
+  color: #fff;
+}
+
+.intro {
+  text-align: center;
+  padding: 8rem 10% 4rem;
+}
+
+.intro h1 {
+  font-size: 2.5rem;
+  margin-bottom: 1rem;
+}
+
+.intro p {
+  color: #ccc;
+  font-size: 1rem;
+}
+
+/* FILTROS */
+.filtros {
+  display: flex;
+  justify-content: center;
+  gap: 1rem;
+  margin-bottom: 3rem;
+}
+
+.filtros button {
+  background: #111;
+  color: #fff;
+  border: 1px solid #333;
+  padding: 0.6rem 1.5rem;
+  border-radius: 30px;
+  cursor: pointer;
+  transition: all 0.3s;
+}
+
+.filtros button:hover,
+.filtros button.ativo {
+  background: #fff;
+  color: #000;
+}
+
+/* CONTAINER DE EPISÓDIOS */
+.episodios-container {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(340px, 1fr));
+  gap: 2rem;
+  padding: 0 10% 6rem;
+}
+
+.episodio-card {
+  background: #111;
+  border-radius: 12px;
+  overflow: hidden;
+  transition: transform 0.3s;
+}
+
+.episodio-card:hover {
+  transform: translateY(-5px);
+}
+
+.episodio-card iframe {
+  width: 100%;
+  height: 200px;
+  border: none;
+}
+
+.episodio-info {
+  padding: 1rem;
+}
+
+.episodio-info h3 {
+  font-size: 1.2rem;
+  margin-bottom: 0.5rem;
+}
+
+.episodio-info p {
+  color: #aaa;
+  font-size: 0.9rem;
+}
+
+.episodio-links {
+  display: flex;
+  justify-content: space-between;
+  padding: 0 1rem 1rem;
+}
+
+.episodio-links a {
+  text-decoration: none;
+  color: #fff;
+  font-size: 0.9rem;
+  opacity: 0.8;
+  transition: 0.3s;
+}
+
+.episodio-links a:hover {
+  opacity: 1;
+}

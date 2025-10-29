@@ -1,0 +1,99 @@
+:root {
+  --bg: #0a0a0a;
+  --fg: #f5f5f5;
+  --muted: #bbbbbb;
+  --line: #1a1a1a;
+  --accent: #ffffff; /* P&B */
+  --max: 1200px;
+  --ease: cubic-bezier(.2, .8, .2, 1);
+}
+
+* { box-sizing: border-box }
+html, body { height: 100% }
+html { scroll-behavior: smooth }
+
+body {
+  margin: 0;
+  background: var(--bg);
+  color: var(--fg);
+  font: 400 16px/1.6 ui-sans-serif, system-ui, -apple-system, Segoe UI, Roboto, Helvetica, Arial, "Apple Color Emoji","Segoe UI Emoji";
+  -webkit-font-smoothing: antialiased;
+  text-rendering: optimizeLegibility;
+}
+
+img { max-width: 100%; display: block }
+a { color: var(--fg); text-decoration: none }
+a:hover { opacity: .9 }
+
+.container { max-width: var(--max); margin-inline: auto; padding: 0 24px }
+.container.narrow { max-width: 860px }
+
+.section { padding: 96px 0 }
+.section.alt { background: #0f0f0f }
+
+h1,h2,h3{ line-height:1.1; margin:0 0 16px }
+h1{ font-size: clamp(2.4rem, 5vw, 5rem); letter-spacing: -0.02em }
+h2{ font-size: clamp(1.6rem, 3vw, 2.4rem) }
+h3{ font-size: clamp(1.1rem, 2vw, 1.4rem) }
+
+.btn,.btn-ghost,.btn-outline{
+  display:inline-flex; align-items:center; justify-content:center;
+  gap:10px; padding:14px 20px; border-radius:999px;
+  transition:transform .2s var(--ease), opacity .2s var(--ease);
+  border:1px solid var(--fg);
+}
+.btn{ background:var(--fg); color:var(--bg); font-weight:600 }
+.btn-ghost,.btn-outline{ background:transparent }
+.btn:hover,.btn-ghost:hover,.btn-outline:hover{ transform:translateY(-1px) }
+
+ul.bullets{ padding:0; list-style:none; margin:16px 0 0 }
+ul.bullets li{ margin:10px 0; color:var(--muted) }
+
+.stroke{ color:transparent; -webkit-text-stroke:1px var(--fg) }
+
+/* ============================
+   RESPONSIVO (GLOBAL)
+   ============================ */
+
+/* <=1024px */
+@media (max-width:1024px){
+  .container{ padding:0 20px; }
+}
+
+/* <=768px */
+@media (max-width:768px){
+  body{ font-size:15px; }
+  .section{ padding:72px 0; }
+  .btn,.btn-ghost,.btn-outline{ padding:12px 16px; }
+}
+
+/* ✅ MOBILE BASE — <=428px */
+@media (max-width:428px){
+  body{ font-size:14.5px; }
+  .container{ padding:0 16px; }
+  h1{ font-size: clamp(2rem, 7.5vw, 2.3rem); }
+  h2{ font-size:1.5rem; }
+  h3{ font-size:1.1rem; }
+  .stroke{ -webkit-text-stroke:.8px var(--fg); }
+  .btn,.btn-ghost,.btn-outline{ width:100%; }
+}
+
+/* 🎯 iPhone 13 — <=390px (ajustes finos) */
+@media (max-width:390px){
+  h1{ font-size: clamp(1.9rem, 7.2vw, 2.15rem); }
+}
+
+/* 360px */
+@media (max-width:360px){
+  h1{ font-size:1.85rem; }
+}
+
+/* --- Alternância do texto do hero --- */
+.only-desktop { display: block; }
+.only-mobile  { display: none; }
+
+/* Mobile: mostra o curto e esconde o longo */
+@media (max-width: 428px){
+  .only-desktop { display: none !important; }
+  .only-mobile  { display: block !important; }
+}
